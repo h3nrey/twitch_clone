@@ -2,10 +2,12 @@ import Link from "next/link"
 import SearchBar from "./SearchBar"
 export default function Header(){
     return(
-        <header className="flex bg-darkgray gap-2 py-2 text-text px-4 w-full justify-between items-center">
+        <header 
+            className="fixed flex bg-darkgray gap-2 py-2 text-text px-4 w-full justify-between items-center shadow-black shadow-sm"
+        >
             <nav className="flex gap-2">
                 <img src="https://www.freepnglogos.com/uploads/twitch-app-logo-png-3.png" className="h-6" alt="" />
-                <Link href="/Browse" className="font-semibold">Browse</Link>
+                <Link href="/Browse" className="transition font-bold hover:pointer hover:text-principal">Browse</Link>
             </nav>
             
             <SearchBar />

@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function App() {
   return (
-    <div className='text-text'>
+    <div className='text-text pt-[2.7rem]'>
       <main>
         <SideBar />
       </main>
