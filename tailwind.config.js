@@ -13,7 +13,8 @@ module.exports = {
         "lightgray": "#DEDEE3",
         "text": "#E0E0E1",
         "darkgray": "#18181B",
-        "principal": "#8E31E2"
+        "principal": "#8E31E2",
+        "red": "#EB0400"
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
