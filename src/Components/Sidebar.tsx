@@ -1,12 +1,20 @@
 import { ArrowLineLeft, ArrowLineRight, ArrowsDownUp } from "phosphor-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SidebarChannel from "./SidebarChannel";
 
-export default function SideBar(){
+interface SideBarProps {
+    onStateChange: (state: boolean) => void;
+}
+
+export default function SideBar({onStateChange}: SideBarProps){
     const [hidden, setHidden] = useState(true);
 
+    useEffect(() => {
+        onStateChange(hidden)
+    }, [hidden])
+
     return(
-        <div className="bg-darkgray w-fit pt-2 flex flex-col items-center text-text h-[93vh]">
+        <div className="fixed left-0 z-0 bg-darkgray w-fit pt-2 flex flex-col items-center text-text h-[93vh]">
             <header className="flex justify-between p-2 items-center w-full">
                 <h2 className={`font-semibold ${hidden ? "hidden": "block"}`}>Para você</h2>
                 <button 

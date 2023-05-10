@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar"
 export default function Header(){
     return(
         <header 
-            className="fixed flex bg-darkgray gap-2 py-2 text-text px-4 w-full justify-between items-center shadow-black shadow-sm"
+            className="fixed flex z-10 bg-darkgray gap-2 py-2 text-text px-4 w-full justify-between items-center shadow-black shadow-sm"
         >
             <nav className="flex gap-2">
                 <img src="https://www.freepnglogos.com/uploads/twitch-app-logo-png-3.png" className="h-6" alt="" />
