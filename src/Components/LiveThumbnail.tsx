@@ -12,14 +12,20 @@ interface LiveThumbnailProps{
     onLive: boolean;
 }
 
+
 export default function LiveThumbnail({thumb, channelAvatar, liveTitle, liveTags, channelName, onLive, channelColor, liveViewers, channelSubject}: LiveThumbnailProps){
+    const color = `before:bg-[red]`
     return(
     //    <div className="flex flex-col gap-4 w-[18.8rem]"> 
        <div className="flex flex-col gap-4 w-full"> 
         <Link 
         href={`/${channelName}`}
-        className={`w-full cursor-pointer rounded-sm overflow-hidden`} style={{backgroundColor: channelColor}}>
-            <div className="relative hover:scale-[96%] origin-top-right transition">
+        className={`w-full cursor-pointer rounded-sm group p-[0.3125rem] relative z-0`}
+        >
+            <div className={`absolute w-full h-full z-1 top-0 left-0 content-[""] thumb__path scale-0 group-hover:scale-100 group-hover:-translate-x-[1px] group-hover:translate-y-[1px]`}
+                style={{backgroundColor: channelColor}}></div>
+            <div className="relative group-hover:translate-x-1 group-hover:-translate-y-1 origin-top-right transition">
+                {/* Live span  */}
                 {onLive && (
                     <div className="absolute z-1 p-4">
                         <span 
@@ -32,6 +38,7 @@ export default function LiveThumbnail({thumb, channelAvatar, liveTitle, liveTags
                 
                 <img src={thumb} className="w-full rounded-sm" alt="" />
 
+                {/* Viewers span  */}
                 <div className="absolute z-1 p-4 top-full -translate-y-full left-0">
                         <span 
                             className="bg-darkgray opacity-80 px-[0.2rem] py-[0.05rem] font-normal text-[0.8rem] rounded-[0.2rem] leading-[100%]"
@@ -50,7 +57,7 @@ export default function LiveThumbnail({thumb, channelAvatar, liveTitle, liveTags
                 />
             </div>
             <div className="flex flex-col overflow-hidden leading-[100%] gap-1">
-                <h3 className="whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-[15rem]">{liveTitle}</h3>
+                <h3 className="whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-[15rem] ">{liveTitle}</h3>
                 <Link 
                 href={`/${channelName}`}
                 className="text-[0.9rem] text-lightgray font-thin hover:text-principal transition"

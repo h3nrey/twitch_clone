@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .thumb__path {
+    clip-path: polygon(3% 0, 100% 0, 100% 95%, 97% 100%, 0 100%, 0 6%);
+  }
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

@@ -6,8 +6,10 @@ export default function Header(){
             className="fixed flex z-10 bg-darkgray gap-2 py-2 text-text px-4 w-full justify-between items-center shadow-black shadow-sm"
         >
             <nav className="flex gap-2">
-                <img src="https://www.freepnglogos.com/uploads/twitch-app-logo-png-3.png" className="h-6" alt="" />
-                <Link href="/Browse" className="transition font-bold hover:pointer hover:text-principal">Browse</Link>
+                <Link href="/">
+                 <img src="https://www.freepnglogos.com/uploads/twitch-app-logo-png-3.png" className="h-6" alt="" />
+                </Link>
+                <Link href="/browse" className="transition font-bold hover:pointer hover:text-principal">Browse</Link>
             </nav>
             
             <SearchBar />

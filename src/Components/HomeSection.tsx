@@ -12,13 +12,13 @@ export default function HomeSection({sidebarHidden, sectionTitle}: SectionProps)
     const [isSectionOpen, setIsSectionOpen] = useState(false);
     return(
         <section className='mt-8 pb-2 flex flex-col gap-2 w-full'>
-          <h3 className='font-bold'>{sectionTitle}</h3>
+          <h3 className='font-bold text-[1.125rem]'>{sectionTitle}</h3>
 
           {/* lives container */}
           <div className='flex flex-col gap-y-4'>
 
             {/* First row */}
-            <div className={`grid ${sidebarHidden ? 'grid-cols-4' : 'grid-cols-3'} gap-2`}>
+            <div className={`grid ${sidebarHidden ? 'grid-cols-4' : 'grid-cols-3'}`}>
             {section1Data.map((live, index) => index < 4 && (
               <>
                 {

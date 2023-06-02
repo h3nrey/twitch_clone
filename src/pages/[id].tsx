@@ -21,22 +21,7 @@ export default function App() {
   }
   return (
     <div className='text-text pt-[3rem]'>
-      <main className="flex flex-col px-[1rem]" style={style}>
-        <SideBar onStateChange={HandleSideBar}/>
-        <Carousel />
-        <HomeSection 
-          sidebarHidden={sidebarHidden} 
-          sectionTitle="Lives that we think you'll like"
-          />
-        <HomeSection 
-          sidebarHidden={sidebarHidden} 
-          sectionTitle="Lives that we think you'll like"
-          />
-        <HomeSection 
-          sidebarHidden={sidebarHidden} 
-          sectionTitle="Lives that we think you'll like"
-          />
-      </main>
+      peixonauta
     </div>
   )
 }

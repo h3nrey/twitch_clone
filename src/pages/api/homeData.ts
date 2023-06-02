@@ -34,7 +34,7 @@ export const section1Data = [
     },
     {
         channelName: "Rei das mitadas",
-        channelSubject: "Chapando na linguiça do Raluca parte 69",
+        channelSubject: "ralucando",
         channelColor: '#fda4ba',
         liveTitle: "Chapando na linguiça do Raluca parte 69",
         liveTags: ["piscada", "baseadoemque", "cringe"],

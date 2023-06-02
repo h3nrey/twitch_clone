@@ -19,7 +19,7 @@ export default function SideBar({onStateChange}: SideBarProps){
                 <h2 className={`font-semibold ${hidden ? "hidden": "block"}`}>Para você</h2>
                 <button 
                     className="flex items-center justify-center p-[0.3rem] rounded-md
-                    hover:bg-gray hover:outline hover:outline-2 hover:outline-purple-600 transition group" 
+                    hover:bg-gray hover:outline hover:outline-2 hover:outline-purple-600 transition group md:hidden" 
                     onClick={() => setHidden(!hidden)}
                 >   
                     { hidden ? (
