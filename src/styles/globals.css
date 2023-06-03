@@ -6,6 +6,10 @@
   .thumb__path {
     clip-path: polygon(3% 0, 100% 0, 100% 95%, 97% 100%, 0 100%, 0 6%);
   }
+
+  .verticalCard__path {
+    clip-path: polygon(5% 0, 100% 0, 100% 96%, 95% 100%, 0 100%, 0 5%);
+  }
 }
 :root {
   --foreground-rgb: 0, 0, 0;

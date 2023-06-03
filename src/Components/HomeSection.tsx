@@ -1,6 +1,6 @@
 import { section1Data } from "@/pages/api/homeData";
 import LiveThumbnail from "./LiveThumbnail";
-import { CaretDown } from "phosphor-react";
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 
@@ -76,7 +76,7 @@ export default function HomeSection({sidebarHidden, sectionTitle}: SectionProps)
                   onClick={() => setIsSectionOpen(true)}
                   className="z-1 flex gap-2 items-center text-principal rounded hover:bg-gray hover:text-lightgray font-bold transition p-2">
                 Show more 
-                <span><CaretDown weight='bold'/></span></button>
+                <span><ChevronDown/></span></button>
               </div>
               
             </div>

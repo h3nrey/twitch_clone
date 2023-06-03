@@ -6,7 +6,6 @@ import Carousel from '@/Components/Carousel'
 import { useState } from 'react'
 import LiveThumbnail from '@/Components/LiveThumbnail'
 import { section1Data } from './api/homeData'
-import { CaretDown } from 'phosphor-react'
 import HomeSection from '@/Components/HomeSection'
 
 const inter = Inter({ subsets: ['latin'] })
