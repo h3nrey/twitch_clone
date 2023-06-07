@@ -32,7 +32,7 @@ export default function CategoryCard({
       <div className="flex flex-col gap-2 text-lightgray">
         <p className="text-[1.125rem] font-bold leading-tight">{gameTitle}</p>
         <span>{viewers} viewers</span>
-        <div className='flex gap-2'>
+        <div className='flex gap-2 flex-wrap'>
           {tags.map(tag => {
             return <span className='px-3 bg-gray rounded-full'>{tag}</span>
           })}

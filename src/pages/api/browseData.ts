@@ -1,26 +1,42 @@
 import { Card } from '@/Components/Browse/CategoryCard'
 
+const categoriesIconUrl = "https://static-cdn.jtvnw.net/c3-vg/verticals/"
 export const categories = [
   {
-    icon: 'https://static-cdn.jtvnw.net/c3-vg/verticals/gaming.svg',
+    icon: `${categoriesIconUrl}gaming.svg`,
     title: 'Games',
   },
   {
-    icon: 'https://static-cdn.jtvnw.net/c3-vg/verticals/gaming.svg',
+    icon: `${categoriesIconUrl}irl.svg`,
     title: 'IRL',
   },
   {
-    icon: 'https://static-cdn.jtvnw.net/c3-vg/verticals/gaming.svg',
+    icon: `${categoriesIconUrl}music.svg`,
     title: 'Music',
   },
   {
-    icon: 'https://static-cdn.jtvnw.net/c3-vg/verticals/gaming.svg',
+    icon: `${categoriesIconUrl}esports.svg`,
     title: 'Esports',
   },
   {
-    icon: 'https://static-cdn.jtvnw.net/c3-vg/verticals/gaming.svg',
+    icon: `${categoriesIconUrl}creative.svg`,
     title: 'Creative',
   },
+]
+
+export const gamesGenre = [
+  "Plataform", 
+  "Action",
+  "Adventure",
+  "Open World",
+  "FPS",
+  "Pinball",
+  "RPG",
+  "Puzzle",
+  "Horror",
+  "Indie",
+  "Arcade"
+
 ]
 
 export const games: Card[] = [
@@ -29,41 +45,48 @@ export const games: Card[] = [
     imageURL: 'https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg',
     gameTitle: 'Valorant',
     viewers: 100,
-    tags: ['FPS', 'Shooter', 'Action'],
+    tags: ['FPS', 'Shooter'],
   },
   {
     url: 'valorant',
     imageURL: 'https://static-cdn.jtvnw.net/ttv-boxart/492535_IGDB-285x380.jpg',
     gameTitle: 'Celeste',
     viewers: 10000,
-    tags: ['FPS', 'Plataform', 'Action'],
+    tags: ['FPS', 'Plataform'],
   },
   {
     url: 'valorant',
     imageURL: 'https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg',
     gameTitle: 'Valorant',
     viewers: 100,
-    tags: ['FPS', 'Shooter', 'RPG'],
+    tags: ['FPS', 'Shooter'],
   },
   {
     url: 'valorant',
     imageURL: 'https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg',
     gameTitle: 'Valorant',
     viewers: 100,
-    tags: ['FPS', 'Shooter', 'Action'],
+    tags: ['FPS', 'Shooter'],
   },
   {
     url: 'valorant',
     imageURL: 'https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg',
     gameTitle: 'Valorant',
     viewers: 100,
-    tags: ['FPS', 'Shooter', 'Action'],
+    tags: ['FPS', 'Shooter'],
   },
   {
     url: 'valorant',
     imageURL: 'https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg',
     gameTitle: 'Valorant',
     viewers: 100,
-    tags: ['FPS', 'Shooter', 'Action'],
+    tags: ['FPS', 'Shooter'],
+  },
+  {
+    url: 'amoungus',
+    imageURL: 'https://static-cdn.jtvnw.net/ttv-boxart/510218_IGDB-285x380.jpg',
+    gameTitle: 'Amoung Us',
+    viewers: 100,
+    tags: ['FPS', 'Adventure'],
   },
 ]

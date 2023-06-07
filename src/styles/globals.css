@@ -10,6 +10,32 @@
   .verticalCard__path {
     clip-path: polygon(5% 0, 100% 0, 100% 96%, 95% 100%, 0 100%, 0 5%);
   }
+  
+  /* width */
+.scrollable:hover::-webkit-scrollbar {
+  width: 8px;
+  height: 20px;
+  /* height: 10px; */
+}
+
+/* Track */
+.scrollable:hover::-webkit-scrollbar-track {
+  background: transparent;
+  /* height: 20px; */
+}
+
+/* Handle */
+.scrollable:hover::-webkit-scrollbar-thumb {
+  height: 30px !important;
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.scrollable:hover::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 }
 :root {
   --foreground-rgb: 0, 0, 0;
