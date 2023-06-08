@@ -26,7 +26,7 @@ export default function CategoryCard({
         <img
           src={imageURL}
           alt=""
-          className="group-hover:translate-x-1 group-hover:-translate-y-1 z-1"
+          className="group-hover:translate-x-1 group-hover:-translate-y-1 z-1 h-[16rem] w-full object-cover"
         />
       </Link>
       <div className="flex flex-col gap-2 text-lightgray">

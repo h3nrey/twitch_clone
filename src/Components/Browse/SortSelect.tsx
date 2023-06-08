@@ -1,5 +1,6 @@
 import { ChevronDown, Sparkles, Check, ArrowDownNarrowWide } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { PopoverContent, PopoverRoot, PopoverTrigger } from '../PopOver'
 
 export interface Option {
   value: string
@@ -27,31 +28,8 @@ export default function SortSelect({ emitSelection }: SortSelectProps) {
   const [popOverOpened, setPopOverOpened] = useState(false)
   const targetRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (targetRef.current && !targetRef.current.contains(event.target as Node)) {
-        setPopOverOpened(false)
-      }
-    }
-
-    function handleEscapeKey(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setPopOverOpened(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleEscapeKey);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscapeKey);
-    };
-  }, []);
-
   function handleSelection(index: number) {
     setSelectedOption(options[index])
-    setPopOverOpened(false)
     emitSelection(selectedOption)
   }
 
@@ -59,22 +37,21 @@ export default function SortSelect({ emitSelection }: SortSelectProps) {
     setSelectedOption(options[0])
   }, [])
   return (
-    <div className="relative" ref={targetRef}>
-      <button
-        className="flex items-center bg-darkgray py-1 px-2 gap-2 rounded text-white border-[2px] border-thingray visited:ring-2 visited:ring-principal"
-        onClick={() => setPopOverOpened(!popOverOpened)}
-      >
-        {selectedOption?.text}
-        <ChevronDown />
-      </button>
+    <PopoverRoot>
+      <PopoverTrigger asChild>
+        <div className='h-[1.875rem] flex items-center'>
+          <button
+            className="flex items-center bg-darkgray px-[0.625rem] gap-2 rounded text-[0.8125rem] text-white ring-[1px] ring-thingray hover:ring-[2px] focus:ring-4 focus:ring-principal"
+          >
+            {selectedOption?.text}
+            <ChevronDown />
+          </button>
+        </div>
+      </PopoverTrigger>
 
-      {/* Popover  */}
-      {popOverOpened && (
+      <PopoverContent>
         <div className="flex bg-gray flex-col  items-start z-10 p-2 absolute origin-top-right right-0  text-white rounded mt-[2px]">
           {options.map((option, index) => {
-            console.log(
-              `option: ${option.value} | selected ${selectedOption.value}`,
-            )
             return (
               <button
                 key={index}
@@ -98,7 +75,7 @@ export default function SortSelect({ emitSelection }: SortSelectProps) {
             )
           })}
         </div>
-      )}
-    </div>
+      </PopoverContent>
+    </PopoverRoot>
   )
 }

@@ -1,8 +1,9 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 
 // Data 
-import { categories, games } from './api/browseData'
+import { categories, games } from '../api/browseData'
+import { SidebarContext } from '@/SidebarContext'
 
 // Components 
 import SideBar from '@/Components/Sidebar'
@@ -15,7 +16,7 @@ import CategoryNav from '@/Components/Browse/CategoryNav'
 import CategorySearch from '@/Components/Browse/CategorySearch'
 
 export default function App() {
-  const [sidebarHidden, setSideBarHidden] = useState(false)
+  const sidebarHidden = useContext(SidebarContext)
   const [filteredGames, setFilteredGames] = useState<Card[]>(games)
   const [tagSearched, setSearchedTag] = useState("")
 
@@ -29,18 +30,8 @@ export default function App() {
     setFilteredGames(gamesResult);
   }
 
-  // useEffect(FilterGames, [tagSearched])
-
-
-  function HandleSideBar(state: boolean) {
-    setSideBarHidden(state)
-  }
-  const style = {
-    marginLeft: sidebarHidden ? '3rem' : '15rem',
-  }
   return (
-    <div className="bg-bg pt-[3rem] px-[1.875rem]" style={style}>
-      <SideBar onStateChange={HandleSideBar} />
+    <div className="bg-bg">
       <h2 className="text-[3.375rem] font-bold text-text">Browse</h2>
 
       {/* Categories nav  */}
@@ -61,7 +52,7 @@ export default function App() {
       <CategorySearch emitTagSearched={FilterGames} />
 
       {/* Games grid  */}
-      <div className={`grid mt-[1.25rem] gap-[0.625rem] ${sidebarHidden ? 'grid-cols-7' : 'grid-cols-5'}`}>
+      <div className={`grid mt-[1.25rem] gap-x-[0.625rem] gap-6 ${sidebarHidden ? 'grid-cols-7' : 'grid-cols-5'}`}>
         {filteredGames.map((game, index) => {
           return (
             <CategoryCard

@@ -1,10 +1,11 @@
-import Header from '@/Components/Header'
+import Layout from '@/Components/Layout'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
-  return  <div className='bg-bg'>
-      <Header />
-     <Component {...pageProps} />
-     </div>
+  return (
+    <Layout>
+      <Component />
+    </Layout>
+  )
 }
