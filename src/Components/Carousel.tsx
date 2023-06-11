@@ -1,6 +1,6 @@
-import { dir } from "console";
+import { SidebarContext } from "@/SidebarContext";
 import { ArrowLeft, ArrowRight } from "phosphor-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 const lives = [
     {
@@ -51,9 +51,8 @@ const lives = [
 ];
 
 export default function Carousel() {
-    const [currentIndex, setCurrentIndex] = useState(1);
-    const [moveDir, setMoveDir] = useState(1)
     const [indices, setIndices] = useState([3, 4, 0, 1, 2])
+    const sidebarHidden = useContext(SidebarContext);
 
     function handleClick(buttonSense: number) {
         handleIndices(buttonSense)
@@ -63,26 +62,29 @@ export default function Carousel() {
         let curIndices = indices.map(index => {
             return (index + sense + lives.length) % lives.length
         })
-        // console.log(indices)
         setIndices(curIndices)
     }
 
     function CalcDir(index: number) {
         switch (index) {
             case -2:
-                return -172
+                if (!sidebarHidden) return -115
+                return -135
 
             case -1:
-                return -92
+                if (!sidebarHidden) return -38
+                return -45
 
             case 1:
-                return -40
+                if (!sidebarHidden) return 6
+                return 12
 
             case 2:
-                return -25
+                if (!sidebarHidden) return 20
+                return 35
 
             case 0:
-                return -50
+                return 0
         }
     }
 
@@ -96,6 +98,7 @@ export default function Carousel() {
 
         // Direction
         let dir = CalcDir(shiftedIndex)
+        let translate = shiftedIndex * 10
 
         // Zindex
         let zShift = Math.min(cardIndex, lives.length - cardIndex - 1);
@@ -108,7 +111,8 @@ export default function Carousel() {
         let showText = false;
         if (shiftedIndex == 0) showText = true
 
-        return { zIndex, scale, dir, showText, bright };
+        let transform = `scale(${scale}) translateX(-50%) translateX(${dir}%)`
+        return { zIndex, transform, showText, bright };
     };
     return (
         <>
@@ -122,21 +126,26 @@ export default function Carousel() {
                 </button>
 
                 {/* Carousel */}
-                <div className="w-[750px] h-[300px]">
+                <div className="w-[46.875rem] h-[300px]">
                     <div className={`flex relative w-full h-full transition  z-0`}>
                         {/* Carousel Cell  */}
                         {lives.map((live, index) => {
-                            const { zIndex, scale, dir, showText, bright } = setCardsStyle(indices[index]);
+                            const { zIndex, transform, showText, bright } = setCardsStyle(indices[index]);
                             return (
                                 <div
                                     key={index}
-                                    className={`absolute w-full rounded overflow-hidden shadow-md shadow-black/20 drop-shadow-md transition-all duration-300 ease-in left-1/2`}
-                                    style={{ zIndex, transform: `scale(${scale}) translateX(${dir}%)`, filter: `brightness(${bright})` }}>
+                                    className={`absolute w-full rounded overflow-hidden shadow-md shadow-black/20 drop-shadow-md transition-all duration-300 ease-in`}
+                                    style={{
+                                        zIndex,
+                                        transform,
+                                        filter: `brightness(${bright})`,
+                                        left: `50%`
+                                    }}>
                                     <div className="flex">
                                         <img src={live.livePreview} className="w-full h-[300px] object-cover" alt="" />
 
                                         {showText && (
-                                            <div className="bg-darkgray w-[13,75rem] pl-2">
+                                            <div className="bg-darkgray w-[13.75rem] h-[300px] overflow-hidden pl-2 lg:hidden">
                                                 <header className="flex gap-2 items-start mt-2">
                                                     <img src={live.channelAvatar} alt="" className="rounded-full h-10" />
                                                     <div className="flex flex-col">
