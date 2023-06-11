@@ -5,7 +5,7 @@ import HomeSection from '@/Components/HomeSection'
 const inter = Inter({ subsets: ['latin'] })
 export default function App() {
   return (
-    <div className='text-text pt-[3rem]'>
+    <div className='text-text'>
       <main className="flex flex-col px-[1rem]">
         <Carousel />
         <HomeSection

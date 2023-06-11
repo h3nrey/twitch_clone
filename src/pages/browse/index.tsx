@@ -35,7 +35,7 @@ export default function App() {
       <h2 className="text-[3.375rem] font-bold text-text">Browse</h2>
 
       {/* Categories nav  */}
-      <CategoryNav />
+      <CategoryNav selectedOption={undefined} />
 
       {/* Categories Options  */}
       <nav className="mt-8 text-[1.125rem] font-bold flex items-center gap-2">

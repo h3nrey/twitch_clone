@@ -5,22 +5,27 @@ export const categories = [
   {
     icon: `${categoriesIconUrl}gaming.svg`,
     title: 'Games',
+    description: "Live streams of all your favorite games, from shooters to platformers and everything in between"
   },
   {
     icon: `${categoriesIconUrl}irl.svg`,
     title: 'IRL',
+    description: "The home for everything from working out to exploring the world to chatting and beyond!"
   },
   {
     icon: `${categoriesIconUrl}music.svg`,
     title: 'Music',
+    description: "Your favorite artists and all the best live performances, music production, and special events"
   },
   {
     icon: `${categoriesIconUrl}esports.svg`,
     title: 'Esports',
+    description: "Live tournaments, match highlights, and your favorite pro players all in one place"
   },
   {
     icon: `${categoriesIconUrl}creative.svg`,
     title: 'Creative',
+    description: "A place to share creativity through painting, cooking, programming, and more!"
   },
 ]
 
