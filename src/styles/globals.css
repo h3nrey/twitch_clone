@@ -3,6 +3,35 @@
 @tailwind utilities;
 
 @layer utilities {
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    /* background: black; */
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    background-color: #eee;
+    border: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    top: 100%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    background-color: linear-gradient(
+      90deg,
+      rgba(100, 100, 200, 1) 0%,
+      rgba(100, 100, 200, 1) 53%,
+      rgba(255, 0, 0, 0) 53%
+    );
+    height: 2px;
+    border-radius: 100%;
+  }
+
   .thumb__path {
     clip-path: polygon(3% 0, 100% 0, 100% 95%, 97% 100%, 0 100%, 0 6%);
   }
@@ -10,32 +39,31 @@
   .verticalCard__path {
     clip-path: polygon(5% 0, 100% 0, 100% 96%, 95% 100%, 0 100%, 0 5%);
   }
-  
+
   /* width */
-.scrollable:hover::-webkit-scrollbar {
-  width: 8px;
-  height: 20px;
-  /* height: 10px; */
-}
+  .scrollable:hover::-webkit-scrollbar {
+    width: 8px;
+    height: 20px;
+    /* height: 10px; */
+  }
 
-/* Track */
-.scrollable:hover::-webkit-scrollbar-track {
-  background: transparent;
-  /* height: 20px; */
-}
+  /* Track */
+  .scrollable:hover::-webkit-scrollbar-track {
+    background: transparent;
+    /* height: 20px; */
+  }
 
-/* Handle */
-.scrollable:hover::-webkit-scrollbar-thumb {
-  height: 30px !important;
-  background: #888;
-  border-radius: 10px;
-}
+  /* Handle */
+  .scrollable:hover::-webkit-scrollbar-thumb {
+    height: 30px !important;
+    background: #888;
+    border-radius: 10px;
+  }
 
-/* Handle on hover */
-.scrollable:hover::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
+  /* Handle on hover */
+  .scrollable:hover::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 :root {
   --foreground-rgb: 0, 0, 0;
