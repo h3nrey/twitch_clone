@@ -31,7 +31,7 @@ export default function App() {
   }
 
   return (
-    <div className="bg-bg">
+    <div className="bg-bg px-[1.875rem] pt-10">
       <h2 className="text-[3.375rem] font-bold text-text">Browse</h2>
 
       {/* Categories nav  */}

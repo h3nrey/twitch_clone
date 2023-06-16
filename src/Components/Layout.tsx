@@ -13,7 +13,7 @@ export default function Layout({ children }: any) {
 	}
 
 	const style = {
-		marginLeft: sidebarHidden ? '3rem' : '15rem',
+		marginLeft: sidebarHidden ? '3.1rem' : '15rem',
 	}
 	return (
 		<div className={`font-sans ${inter.variable}`}>
@@ -21,7 +21,7 @@ export default function Layout({ children }: any) {
 			<main className="mt-[3.2rem] bg-bg" style={style}>
 				<SideBar onStateChange={HandleSideBar} />
 
-				<div className='px-[1.875rem] pt-10' >
+				<div className='px-[1.875rim] pte-10' >
 					<SidebarContext.Provider value={sidebarHidden}>
 						{children}
 					</SidebarContext.Provider>
