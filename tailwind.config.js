@@ -19,8 +19,13 @@ module.exports = {
         text: '#E0E0E1',
         darkgray: '#18181B',
         principal: '#8E31E2',
+        salmon: "#ff8280",
         red: '#EB0400',
-        salmon: "#ff8280"
+        green: "#00FF7F",
+        yellow: "#D2C009",
+        orange: "#F57F53",
+        brown: "#D2691E",
+        purple: "#AD54FE"
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -66,7 +66,7 @@ export default function VideoPlayer({ videoURL, exportVideo }: VideoPlayerInterf
     }
 
     return (
-        <div className="flex relative  justify-end bg-black h-[26.25rem]" id="video__player__container" ref={videoContainer}>
+        <div className="flex relative  justify-end bg-black h-[28.6875rem]" id="video__player__container" ref={videoContainer}>
             <video
                 ref={videoRef}
                 src={videoURL}

@@ -1,20 +1,25 @@
 import { SidebarContext } from "@/SidebarContext"
 import { truncateNumber } from "@/utils"
 import { YoutubeLogo } from "phosphor-react"
-import { useContext } from "react"
+import { Children, ReactNode, useContext, useState } from "react"
+import SocialIcon from "./SocialIcon"
+import SocialAnchor from "./SocialAnchor"
 
-interface Channel {
+export interface Channel {
     name: string,
     followers: number,
     desc: string,
-    socialLinks: SocialLink[]
+    socialLinks: SocialLink[],
+    channelColor: string
 }
 
 interface SocialLink {
     title: string,
     url: string,
+    type: string
 }
-export default function About({ name, followers, desc, socialLinks }: Channel) {
+
+export default function About({ name, followers, desc, socialLinks, channelColor }: Channel) {
     const sidebarHidden = useContext(SidebarContext)
 
     return (
@@ -28,14 +33,7 @@ export default function About({ name, followers, desc, socialLinks }: Channel) {
             </div>
             <div className="flex flex-col gap-2">
                 {socialLinks.map(link => (
-                    <a href={link.url} target="blank" className="flex gap-2 hover:text-principal text-darktext">
-                        <figure>
-                            <YoutubeLogo weight="fill" size={20} />
-                        </figure>
-                        <span className="text-[0.8125rem] transition font-semibold">
-                            {link.title}
-                        </span>
-                    </a>
+                    <SocialAnchor color={channelColor} {...link} />
                 ))}
             </div>
         </div>
