@@ -1,6 +1,6 @@
 import { CornersOut, Pause, Play, SpeakerSimpleHigh, SpeakerSimpleLow, SpeakerSimpleX } from "phosphor-react"
 import { ChangeEvent, MouseEvent, useEffect, useRef, useState } from "react"
-import { colors } from "../../../Colors"
+import { colors } from "../../../../Colors"
 import ProgressBar from "./ProgressBar"
 import VideoControls from "./VideoControls"
 import { handleTime } from "@/utils"

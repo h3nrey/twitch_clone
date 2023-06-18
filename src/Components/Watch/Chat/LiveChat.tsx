@@ -1,9 +1,9 @@
-import { CaretLeft, CaretRight, Person, Users } from "phosphor-react";
+import { CaretLeft, CaretRight, Users } from "phosphor-react";
 import { useState } from "react";
 import ChatComment from "./ChatComment";
 
 export default function LiveChat() {
-    const [chatHidden, setChatHidden] = useState(false)
+    const [chatHidden, setChatHidden] = useState(true)
 
     return (
         <div

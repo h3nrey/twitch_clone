@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 
-interface ChatComment {
+interface ChatCommentProps {
     userName: string,
     comment: string,
 }
 
 const colors = ['#EB0400', "#00FF7F", "#D2C009", "#F57F53", "#D2691E", "#AD54FE"]
-export default function ChatComment({ userName, comment }: ChatComment) {
+export default function ChatComment({ userName, comment }: ChatCommentProps) {
     const [userColor, setUserColor] = useState("")
 
     useEffect(() => {

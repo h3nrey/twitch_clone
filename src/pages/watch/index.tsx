@@ -1,7 +1,7 @@
-import About, { Channel } from "@/Components/Player/About";
-import LiveChat from "@/Components/Player/LiveChat";
-import LiveInfo from "@/Components/Player/LiveInfo";
-import VideoPlayer, { Video } from "@/Components/Player/VideoPlayer";
+import About, { Channel } from "@/Components/Watch/Info/About";
+import LiveChat from "@/Components/Watch/Chat/LiveChat";
+import LiveInfo from "@/Components/Watch/Info/LiveInfo";
+import VideoPlayer, { Video } from "@/Components/Watch/Player/VideoPlayer";
 import { handleTime } from "@/utils";
 import { Youtube } from "lucide-react";
 import { InstagramLogo, YoutubeLogo } from "phosphor-react";
@@ -23,7 +23,8 @@ const channel: Channel = {
 const live = {
     liveTitle: "Bonda 4",
     liveCategory: "Just Chatting",
-    liveTags: ["portuguese", "music"]
+    liveTags: ["portuguese", "music"],
+    liveViewers: 269,
 }
 export default function App() {
     const [video, setVideo] = useState<Video>({ progress: 0, isPaused: true })
@@ -35,8 +36,12 @@ export default function App() {
         <div className="bg-bg pb-2 flex">
             <div className="w-full">
                 <VideoPlayer videoURL={videoURL} exportVideo={handleVideoInfo} />
+
                 <div className="px-8 mt-4">
-                    <LiveInfo liveProgress={handleTime(video.progress)} channelName={channel.name} channelColor={channel.channelColor}
+                    <LiveInfo
+                        liveProgress={handleTime(video.progress)}
+                        channelName={channel.name}
+                        channelColor={channel.channelColor}
                         {...live} />
                     <About {...channel} />
                 </div>

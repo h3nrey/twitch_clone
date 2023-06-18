@@ -1,5 +1,5 @@
 import { handleTime } from "@/utils";
-import { colors } from "../../../Colors";
+import { colors } from "../../../../Colors";
 import { ChangeEvent, MouseEvent } from "react";
 
 interface ProgressBarProps {
