@@ -4,7 +4,8 @@ import LiveStats from "./LiveStats";
 
 interface LiveInfoProps {
     channelName: string,
-    channelColor: string
+    channelColor: string,
+    avatarUrl: string,
     liveProgress: string,
     liveTitle: string,
     liveCategory: string,
@@ -13,7 +14,7 @@ interface LiveInfoProps {
 }
 
 export default function LiveInfo(
-    { liveProgress, channelName, channelColor, liveTitle, liveCategory, liveTags, liveViewers }: LiveInfoProps) {
+    { liveProgress, channelName, channelColor, avatarUrl, liveTitle, liveCategory, liveTags, liveViewers }: LiveInfoProps) {
     return (
         <div>
             <div className="flex justify-between items-start">
@@ -21,6 +22,7 @@ export default function LiveInfo(
                 <LiveDetails
                     channelName={channelName}
                     channelColor={channelColor}
+                    avatarUrl={avatarUrl}
                     liveTitle={liveTitle}
                     liveCategory={liveCategory}
                     liveTags={liveTags}

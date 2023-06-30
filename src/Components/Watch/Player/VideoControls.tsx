@@ -2,6 +2,7 @@ import { Play, Pause, CornersOut, SpeakerSimpleHigh, SpeakerSimpleLow, SpeakerSi
 import { ChangeEvent, useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 import PlayerButton from "./PlayerButton"
+import { BoxPositions } from "@/Components/TooltipBox"
 
 interface VideoControlsProps {
     videoRef: HTMLVideoElement | null
@@ -78,7 +79,8 @@ export default function VideoControls({ videoRef, videoContainer, handlePausePop
             {/* Left  */}
             <div className="flex gap-1">
                 {/* Play button  */}
-                <PlayerButton clickCallback={handlePlay} desc={isPaused ? "Play(space)" : "Pause(space)"} posSide="top" keyCode="Space">
+                <PlayerButton clickCallback={handlePlay} desc={isPaused ? "Play(space)" : "Pause(space)"}
+                    posSide={BoxPositions.topLeft} keyCode="Space">
                     {isPaused ? (
                         <Play weight="fill" className="" />
                     ) : (
@@ -89,7 +91,7 @@ export default function VideoControls({ videoRef, videoContainer, handlePausePop
 
                 {/* Volume Button  */}
                 <div className="group flex gap-1">
-                    <PlayerButton clickCallback={handleVolume} desc={volume > 0 ? "Mute(m)" : "Unmute(m)"} posSide="" keyCode="KeyM">
+                    <PlayerButton clickCallback={handleVolume} desc={volume > 0 ? "Mute(m)" : "Unmute(m)"} posSide={BoxPositions.topLeft} keyCode="KeyM">
                         {volumeIcon()}
                     </PlayerButton>
 
@@ -111,22 +113,23 @@ export default function VideoControls({ videoRef, videoContainer, handlePausePop
             {/* Right */}
             <div className="flex">
                 {/* settings */}
-                <PlayerButton clickCallback={() => alert("Settings")} desc="Settings" posSide="left-0" keyCode="">
+                <PlayerButton clickCallback={() => alert("Settings")} desc="Settings" posSide={BoxPositions.topLeft} keyCode="">
                     <Gear weight="bold" size={20} />
                 </PlayerButton>
 
                 {/* Clip  */}
-                <PlayerButton clickCallback={() => alert("Creating clip")} desc="Clip (x)" posSide="right-0" keyCode="KeyX">
+                <PlayerButton clickCallback={() => alert("Creating clip")} desc="Clip (x)" posSide={BoxPositions.topLeft} keyCode="KeyX">
                     <FilmSlate weight="bold" size={20} />
                 </PlayerButton>
 
                 {/* Theatre  */}
-                <PlayerButton clickCallback={handleFullscreen} desc="Theatre (alt+t)" posSide="right-0" keyCode="KeyT">
+                <PlayerButton clickCallback={handleFullscreen} desc="Theatre (alt+t)" posSide={BoxPositions.topRight} keyCode="KeyT">
                     <SidebarSimple weight="bold" size={20} />
                 </PlayerButton>
 
                 {/* fullscreen  */}
-                <PlayerButton clickCallback={handleFullscreen} desc="Fullscreen (f)" posSide="right-0" keyCode="KeyF">
+                <PlayerButton clickCallback={handleFullscreen} desc="Fullscreen (f)" posSide={BoxPositions.topRight}
+                    keyCode="KeyF">
                     <CornersOut weight="bold" size={20} />
                 </PlayerButton>
             </div>

@@ -55,7 +55,7 @@ export default function SortSelect({ emitSelection }: SortSelectProps) {
             return (
               <button
                 key={index}
-                className={`flex items-center gap-1 p-2 rounded transition ${selectedOption.value === option.value
+                className={`flex items-center gap-1 p-2 w-full rounded transition ${selectedOption.value === option.value
                   ? 'bg-principal hover:bg-principal'
                   : 'bg-transparent hover:bg-white/10 '
                   }`}

@@ -27,7 +27,7 @@ export default function LiveThumbnail({
     //    <div className="flex flex-col gap-4 w-[18.8rem]">
     <div className="flex flex-col gap-4 w-full">
       <Link
-        href={`/${channelName}`}
+        href={`/watch/${channelName}`}
         className={`w-full cursor-pointer rounded-sm group p-[0.3125rem] relative z-0`}
       >
         <div

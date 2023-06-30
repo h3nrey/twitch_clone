@@ -73,7 +73,7 @@ export default function TooltipBox({ children, boxPos, description }: TooltipBox
             {children}
             {showTooltip && (
                 <span
-                    className={`absolute flex bg-white px-[0.3125rem] py-[0.3125rem] text-[0.8125rem] text-bg transition rounded font-semibold ${handlePos()} whitespace-nowrap`}
+                    className={`absolute flex bg-white dark:bg-lightMode_black dark:text-lightMode_gray px-[0.3125rem] py-[0.3125rem] text-[0.8125rem] text-bg transition rounded font-semibold ${handlePos()} whitespace-nowrap`}
                 >
                     {description}
                 </span>

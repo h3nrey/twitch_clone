@@ -4,16 +4,19 @@ import Avatar from "./Avatar";
 interface LiveDetailsProps {
     channelName: string,
     channelColor: string,
+    avatarUrl: string
     liveTitle: string,
     liveCategory: string,
     liveTags: string[]
 }
 
-export default function LiveDetails({ channelName, channelColor, liveTitle, liveCategory, liveTags }: LiveDetailsProps) {
+export default function LiveDetails({ channelName, channelColor, avatarUrl, liveTitle, liveCategory, liveTags }: LiveDetailsProps) {
     return (
         <div className="flex gap-3">
             {/* Avatar Icon  */}
-            <Avatar channelColor={channelColor} />
+            <Avatar
+                channelColor={channelColor}
+                avatarURL={avatarUrl} />
 
             {/* Channel Info  */}
             <div className="text-text">

@@ -1,4 +1,4 @@
-import { section1Data } from "@/pages/api/homeData";
+import { Channel, Live } from "@/pages/api/homeData";
 import LiveThumbnail from "./LiveThumbnail";
 import { ChevronDown } from "lucide-react";
 import { useContext, useState } from "react";
@@ -7,8 +7,9 @@ import { SidebarContext } from "@/SidebarContext";
 
 interface SectionProps {
   sectionTitle: string;
+  channels: Channel[]
 }
-export default function HomeSection({ sectionTitle }: SectionProps) {
+export default function HomeSection({ sectionTitle, channels }: SectionProps) {
   const [isSectionOpen, setIsSectionOpen] = useState(false);
   const sidebarHidden = useContext(SidebarContext);
 
@@ -21,22 +22,22 @@ export default function HomeSection({ sectionTitle }: SectionProps) {
 
         {/* First row */}
         <div className={`grid ${sidebarHidden ? 'grid-cols-4' : 'grid-cols-3'}`}>
-          {section1Data.map((live, index) => index < 4 && (
+          {channels.map(({ name, color, avatarUrl, live }, index) => index < 4 && (
             <>
               {
                 !sidebarHidden && index == 3 ? (
                   <></>
                 ) :
                   <LiveThumbnail
-                    channelName={live.channelName}
-                    channelSubject={live.channelSubject}
-                    channelColor={live.channelColor}
-                    liveTitle={live.liveTitle}
-                    liveTags={live.liveTags}
-                    liveViewers={live.liveViewers}
+                    channelName={name}
+                    channelSubject={live.category}
+                    channelColor={color}
+                    liveTitle={live.title}
+                    liveTags={live.tags}
+                    liveViewers={live.viewers}
                     onLive={live.onLive}
-                    thumb={live.thumb}
-                    channelAvatar={live.channelAvatar}
+                    thumb={live.thumbUrl}
+                    channelAvatar={avatarUrl}
                   />
               }
             </>
@@ -46,22 +47,22 @@ export default function HomeSection({ sectionTitle }: SectionProps) {
         {/* Second row */}
         {isSectionOpen && (
           <div className='flex gap-2'>
-            {section1Data.map((live, index) => index >= 4 && (
+            {channels.map(({ name, color, avatarUrl, live }, index) => index >= 4 && (
               <>
                 {
                   !sidebarHidden && index == 6 ? (
                     <></>
                   ) :
                     <LiveThumbnail
-                      channelName={live.channelName}
-                      channelSubject={live.channelSubject}
-                      channelColor={live.channelColor}
-                      liveTitle={live.liveTitle}
-                      liveTags={live.liveTags}
-                      liveViewers={live.liveViewers}
+                      channelName={name}
+                      channelSubject={live.category}
+                      channelColor={color}
+                      liveTitle={live.title}
+                      liveTags={live.tags}
+                      liveViewers={live.viewers}
                       onLive={live.onLive}
-                      thumb={live.thumb}
-                      channelAvatar={live.channelAvatar}
+                      thumb={live.thumbUrl}
+                      channelAvatar={avatarUrl}
                     />
                 }
               </>
@@ -86,6 +87,6 @@ export default function HomeSection({ sectionTitle }: SectionProps) {
 
       </div>
 
-    </section>
+    </section >
   )
 }

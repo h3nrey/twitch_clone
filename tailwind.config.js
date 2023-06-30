@@ -5,6 +5,7 @@ module.exports = {
     './src/Components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -25,7 +26,13 @@ module.exports = {
         yellow: "#D2C009",
         orange: "#F57F53",
         brown: "#D2691E",
-        purple: "#AD54FE"
+        purple: "#AD54FE",
+        lightMode_white: "#ffffff",
+        lightMode_gray: "#F7F7F8",
+        lightMode_thinGray: "#EFEFF1",
+        lightMode_darkGray: "#DFDFE2",
+        lightMode_black: "rgb(31, 31, 35)",
+        lightMode_thinBlack: "#53535f",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

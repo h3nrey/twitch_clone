@@ -4,12 +4,15 @@ import TooltipBox, { BoxPositions } from "./TooltipBox"
 import { Chat, CrownSimple, CurrencyEth, DotsThreeOutlineVertical, Tray } from "phosphor-react"
 import Button from "./Button"
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "./PopOver"
+import ThemeSwitcher from "./Header/ThemeSwitcher"
+import { ThemeContext } from "@/ThemeContext"
+import { useContext } from "react"
 export default function Header() {
     return (
         <header
-            className="fixed top-0 flex z-10 bg-darkgray gap-2 py-2 text-text px-4 w-full justify-between items-center shadow-black shadow-sm"
+            className="fixed top-0 flex z-10 bg-darkgray dark:bg-lightMode_white gap-2 py-2 text-text px-4 w-full justify-between items-center shadow-black dark:shadow-lightMode_thinBlack/20 shadow-sm"
         >
-            <nav className="flex items-center gap-2">
+            <nav className="flex items-center gap-2 dark:text-lightMode_black">
                 <Link href="/">
                     <img src="https://www.freepnglogos.com/uploads/twitch-app-logo-png-3.png" className="h-6" alt="" />
                 </Link>
@@ -17,7 +20,7 @@ export default function Header() {
                 <Link href="/browse" className="transition font-semibold hover:pointer hover:text-principal text-sm">Browse</Link>
                 <TooltipBox description="More" boxPos={BoxPositions.bottomCenter}>
                     <button
-                        className="bg-transparent hover:bg-white/30 rounded transition w-[1.875rem] h-[1.875rem] flex justify-center items-center">
+                        className="bg-transparent hover:bg-white/30 dark:hover:bg-lightMode_thinGray rounded transition w-[1.875rem] h-[1.875rem] flex justify-center items-center">
                         <DotsThreeOutlineVertical weight="fill" size={20} />
                     </button>
                 </TooltipBox>
@@ -25,7 +28,7 @@ export default function Header() {
 
             <SearchBar />
 
-            <div className="flex gap-4 text-lext">
+            <div className="flex items-center gap-4 text-lext dark:text-lightMode_black">
                 {/* Options  */}
                 <TooltipBox
                     description="Prime loot"
@@ -65,26 +68,29 @@ export default function Header() {
                     <PopoverTrigger asChild>
                         <button>
                             <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/7b68f6a2-1316-47c9-98e6-4413dad16837-profile_image-70x70.jpg"
-                                className="rounded-full h-8"
+                                className="rounded-full h-[1.875rem]"
                                 alt=""
                             />
                         </button>
                     </PopoverTrigger>
                     <PopoverContent>
                         <div
-                            className="absolute inline right-0 bg-darkgray rounded -translate-x-2 drop-shadow-lg shadow-black  p-[0.625rem] z-50"
+                            className="absolute inline right-0 bg-darkgray dark:bg-lightMode_white rounded -translate-x-2 drop-shadow-lg shadow-black  p-[0.625rem] z-50"
                             style={{ boxShadow: "0 0 10px 1px rgba(0,0,0,0.5)" }}>
                             <div className="flex gap-1 items-center pb-4 border-b-[1px] border-gray">
                                 <figure>
                                     <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/7b68f6a2-1316-47c9-98e6-4413dad16837-profile_image-70x70.jpg"
-                                        className="rounded-full h-12"
+                                        className="rounded-full h-10"
                                         alt=""
                                     />
                                 </figure>
                                 <h2>Vitongemaplys</h2>
                             </div>
 
-                            <p>Lorem ipsum, dolor sit amet</p>
+                            <div className="mt-1">
+                                <ThemeSwitcher />
+                                <p>Lorem ipsum, dolor sit amet</p>
+                            </div>
                         </div>
                     </PopoverContent>
                 </PopoverRoot>
