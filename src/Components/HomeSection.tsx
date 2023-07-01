@@ -14,8 +14,8 @@ export default function HomeSection({ sectionTitle, channels }: SectionProps) {
   const sidebarHidden = useContext(SidebarContext);
 
   return (
-    <section className='mt-8 pb-2 flex flex-col gap-2 w-full'>
-      <h3 className='font-bold text-[1.125rem]'>{sectionTitle}</h3>
+    <section className='mt-4 pb-2 flex flex-col gap-2 w-full'>
+      <h3 className='font-bold text-[1.125rem] dark:text-lightMode_black'>{sectionTitle}</h3>
 
       {/* lives container */}
       <div className='flex flex-col gap-y-4'>
@@ -74,10 +74,10 @@ export default function HomeSection({ sectionTitle, channels }: SectionProps) {
         {!isSectionOpen && (
           <div className='relative w-full justify-center items-center flex'>
             <hr className='absolute top-1/2 -translate-y-1/2 text-lightgray w-full z-0' />
-            <div className='bg-bg px-2 z-[1]'>
+            <div className='bg-bg dark:bg-lightMode_gray px-2 z-[1]'>
               <button
                 onClick={() => setIsSectionOpen(true)}
-                className="z-1 flex gap-2 items-center text-principal rounded hover:bg-gray hover:text-lightgray font-bold transition p-2">
+                className="z-1 flex gap-2 items-center text-principal rounded hover:bg-gray dark:hover:bg-lightMode_thinGray dark:hover:text-lightMode_black hover:text-lightgray font-medium transition p-[0.625rem] py-[0.3125rem]">
                 Show more
                 <span><ChevronDown /></span></button>
             </div>

@@ -34,7 +34,7 @@ export default function App() {
     return (
         <>
             {channelData && (
-                <div className="bg-bg pb-2 flex">
+                <div className="bg-bg dark:bg-lightMode_gray pb-2 flex">
                     <div className="w-full">
                         <VideoPlayer videoURL={videoURL} exportVideo={handleVideoInfo} />
 

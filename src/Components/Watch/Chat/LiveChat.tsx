@@ -13,7 +13,7 @@ export default function LiveChat() {
                 className="h-screen fixed outline outline-1 pt-[3.25rem] top-0 right-0 transition"
                 style={{ width: chatHidden ? "0" : "21.25rem" }}
             >
-                <div className="relative h-full">
+                <div className="relative h-full text-text dark:text-lightMode_black">
                     {chatHidden ? (
                         <div
                             className="absolute left-0 top-0 pt-4 -translate-x-10">
@@ -24,14 +24,14 @@ export default function LiveChat() {
                             </button>
                         </div>
                     ) : (
-                        <div className="bg-bg h-full outline outline-1 outline-gray">
+                        <div className="bg-bg dark:bg-lightMode_white h-full outline outline-1 outline-gray">
 
 
                             <header
-                                className="text-text flex justify-between items-center p-[0.625rem] outline outline-1 outline-gray"
+                                className="flex justify-between items-center p-[0.625rem] outline outline-1 outline-gray"
                             >
                                 <button
-                                    className="text-text hover:bg-white/20 p-1 rounded"
+                                    className="hover:bg-white/20 p-1 rounded"
                                     onClick={() => setChatHidden(true)}
                                 >
                                     <CaretRight weight="bold" size={20} />

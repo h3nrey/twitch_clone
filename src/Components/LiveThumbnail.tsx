@@ -54,23 +54,23 @@ export default function LiveThumbnail({
           </div>
         </div>
       </Link>
-      <div className="flex gap-2">
+      <div className="flex gap-2 dark:text-lightMode_thinBlack text-lightgray ">
         <div>
           <img className="rounded-full h-10 w-10" src={channelAvatar} alt="" />
         </div>
-        <div className="flex flex-col overflow-hidden leading-[100%] gap-1">
+        <div className="flex flex-col overflow-hidden leading-[100%] gap-1 ">
           <h3 className="whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-[15rem] ">
             {liveTitle}
           </h3>
           <Link
             href={`/${channelName}`}
-            className="text-[0.9rem] text-lightgray font-thin hover:text-principal transition"
+            className="text-[0.9rem] text-lightgray dark:text-lightMode_black font-light hover:text-principal transition"
           >
             {channelName}
           </Link>
           <Link
             href={`/subject/${channelName}`}
-            className="text-[0.9rem] text-lightgray font-thin hover:text-principal transition"
+            className="text-[0.9rem] font-light  hover:text-principal transition"
           >
             {channelSubject}
           </Link>
@@ -78,7 +78,7 @@ export default function LiveThumbnail({
             {liveTags.map((tag, index) => (
               <p
                 key={index}
-                className="px-2 py-[0.1rem] text-[0.8rem] bg-gray rounded-lg"
+                className="px-2 py-[0.1rem] text-[0.8rem] bg-gray dark:bg-lightMode_darkGray rounded-lg"
               >
                 {tag}
               </p>

@@ -19,7 +19,7 @@ export default function LiveDetails({ channelName, channelColor, avatarUrl, live
                 avatarURL={avatarUrl} />
 
             {/* Channel Info  */}
-            <div className="text-text">
+            <div className="text-text dark:text-lightMode_black">
                 <h2 className="font-bold text-[1.125rem]">{channelName}</h2>
                 <h3 className="text-sm font-semibold">{liveTitle}</h3>
                 <div className="flex gap-2 items-center">
@@ -28,7 +28,7 @@ export default function LiveDetails({ channelName, channelColor, avatarUrl, live
                     </Link>
                     <div className="flex gap-1">
                         {liveTags.map(tag => (
-                            <span key={tag} className="rounded-full bg-darkgray px-2 text-[0.75rem] text-thingray font-semibold">
+                            <span key={tag} className="rounded-full bg-darkgray dark:bg-lightMode_darkGray px-2 text-[0.75rem] text-thingray font-semibold">
                                 {tag}
                             </span>
                         ))}

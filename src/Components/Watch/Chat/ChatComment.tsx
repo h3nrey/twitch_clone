@@ -17,7 +17,7 @@ export default function ChatComment({ userName, comment }: ChatCommentProps) {
     return (
         <div className="p-1 text-sm hover:bg-white/20 rounded transition">
             <div
-                className="py-[0.3125rem] pl-[0.625rem] text-text font-normal"
+                className="py-[0.3125rem] pl-[0.625rem] text-text dark:text-lightMode_black font-normal"
             >
                 <span className="" style={{ color: userColor }}>
                     {userName}

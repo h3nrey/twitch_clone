@@ -26,7 +26,7 @@ export default function SocialAnchor({ color, url, type, title }: SocialAnchorPr
         <a
             href={url}
             target="blank"
-            className="flex gap-2 hover:text-principal text-darktext"
+            className="flex gap-2 hover:text-principal text-darktext dark:text-lightMode_black"
             style={{ color: isHoveringAnchor ? color : "#adadb8" }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

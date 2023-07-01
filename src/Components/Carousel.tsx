@@ -1,5 +1,6 @@
 import { SidebarContext } from "@/SidebarContext";
-import { ArrowLeft, ArrowRight } from "phosphor-react";
+import { truncateNumber } from "@/utils";
+import { ArrowLeft, ArrowRight, CaretLeft, CaretRight } from "phosphor-react";
 import { useContext, useState } from "react";
 
 const lives = [
@@ -116,13 +117,13 @@ export default function Carousel() {
     };
     return (
         <>
-            <div className="flex w-full justify-between items-center h-fit mt-4">
+            <div className="flex w-full justify-between items-center h-fit my-4">
                 {/* button left */}
                 <button
-                    className="p-2 hover:bg-gray rounded-md hover:outline hover:outline-2 hover:outline-principal transition"
+                    className="p-2 hover:bg-gray rounded-md dark:bg-lightMode_white dark:text-lightMode_black hover:outline hover:outline-2 hover:outline-principal transition"
                     onClick={() => handleClick(1)}
                 >
-                    <ArrowLeft size={32} weight="bold" />
+                    <CaretLeft size={32} weight="bold" />
                 </button>
 
                 {/* Carousel */}
@@ -145,21 +146,21 @@ export default function Carousel() {
                                         <img src={live.livePreview} className="w-full h-[300px] object-cover" alt="" />
 
                                         {showText && (
-                                            <div className="bg-darkgray w-[13.75rem] h-[300px] overflow-hidden pl-2 lg:hidden">
+                                            <div className="bg-darkgray dark:bg-white w-[13.75rem] h-[300px] overflow-hidden pl-2 lg:hidden">
                                                 <header className="flex gap-2 items-start mt-2">
                                                     <img src={live.channelAvatar} alt="" className="rounded-full h-10" />
                                                     <div className="flex flex-col">
                                                         <h3 className="text-principal">{live.channelName}</h3>
                                                         <p className="text-principal text-[0.8125rem]">{live.liveSubject}</p>
-                                                        <span className="text-[0.8125rem]">{live.liveViewers} viewers</span>
+                                                        <span className="text-[0.8125rem] dark:text-lightMode_black">{truncateNumber(live.liveViewers)} viewers</span>
                                                     </div>
                                                 </header>
                                                 <div className="flex gap-2 mt-2">
                                                     {live.liveTags.map(tag =>
-                                                        <span className="py-[1px] px-2 text-[0.8125rem] bg-gray rounded-2xl">{tag}</span>
+                                                        <span className="py-[1px] px-2 text-[0.8125rem] bg-gray dark:bg-lightMode_darkGray dark:text-lightMode_black rounded-2xl">{tag}</span>
                                                     )}
                                                 </div>
-                                                <p className="text-[0.8125rem] mt-2">{live.liveDescription}</p>
+                                                <p className="text-[0.8125rem] mt-2 dark:text-lightMode_black">{live.liveDescription}</p>
                                             </div>
                                         )}
 
@@ -173,10 +174,10 @@ export default function Carousel() {
 
                 {/* button Right */}
                 <button
-                    className="p-2 hover:bg-gray rounded-md hover:outline hover:outline-2 hover:outline-principal transition"
+                    className="p-2 hover:bg-gray dark:bg-lightMode_white dark:text-lightMode_black z-10 rounded-md hover:outline hover:outline-2 hover:outline-principal transition"
                     onClick={() => handleClick(-1)}
                 >
-                    <ArrowRight size={32} weight="bold" />
+                    <CaretRight size={32} weight="bold" />
                 </button>
             </div>
         </>
