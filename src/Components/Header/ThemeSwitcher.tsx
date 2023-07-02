@@ -1,3 +1,4 @@
+"use server"
 import { ThemeContext } from "@/ThemeContext";
 import { Moon, Check } from "phosphor-react";
 import { useContext } from "react";
@@ -8,8 +9,10 @@ export default function ThemeSwitcher() {
     function switchTheme() {
         if (theme == "dark") {
             setTheme("light")
+            window.localStorage.setItem("theme", "light")
         } else if (theme == "light") {
             setTheme("dark")
+            window.localStorage.setItem("theme", "dark")
         }
     }
     return (

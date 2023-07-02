@@ -1,4 +1,6 @@
-import { ReactNode, useState } from "react"
+"use client"
+import { ReactNode, useEffect, useState } from "react"
+import { cookies } from "next/headers"
 import SideBar from "./Sidebar"
 import Header from "./Header"
 import { SidebarContext } from "@/SidebarContext"
@@ -9,12 +11,27 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export default function Layout({ children }: any) {
 	const [sidebarHidden, setSideBarHidden] = useState(false)
-	const [theme, setTheme] = useState<"dark" | "light">("dark")
+
+	const [theme, setTheme] = useState("dark")
 	const themeValue = { theme, setTheme };
 
 	function HandleSideBar(state: boolean) {
 		setSideBarHidden(state)
 	}
+
+	// Loading theme from local storage
+	useEffect(() => {
+		const localTheme = window.localStorage.getItem("theme")
+
+		// if is loading for the first time and dont have the theme by default is going to be in dark mod
+		if (!localTheme) {
+			window.localStorage.setItem("theme", "dark")
+		}
+
+		if (typeof localTheme == "string") {
+			setTheme(localTheme)
+		}
+	}, [])
 
 	const style = {
 		marginLeft: sidebarHidden ? '3.1rem' : '15rem',
