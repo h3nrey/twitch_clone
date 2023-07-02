@@ -31,8 +31,8 @@ export default function App() {
   }
 
   return (
-    <div className="bg-bg px-[1.875rem] pt-10">
-      <h2 className="text-[3.375rem] font-bold text-text">Browse</h2>
+    <div className="bg-bg dark:bg-lightMode_gray text-text dark:text-lightMode_black px-[1.875rem] pt-10">
+      <h2 className="text-[3.375rem] font-bold">Browse</h2>
 
       {/* Categories nav  */}
       <CategoryNav selectedOption={undefined} />
@@ -41,11 +41,11 @@ export default function App() {
       <nav className="mt-8 text-[1.125rem] font-bold flex items-center gap-2">
         <Link
           href="/browse/"
-          className="border-b-4 border-principal p-2 text-text"
+          className="border-b-4 border-principal p-2"
         >
           Categories
         </Link>
-        <Link href="/browse/" className="border-b-4 border-principal p-2 text-text">Live Channels</Link>
+        <Link href="/browse/" className="border-b-4 border-principal p-2">Live Channels</Link>
       </nav>
 
       {/* Categories Search  */}

@@ -41,7 +41,7 @@ export default function SortSelect({ emitSelection }: SortSelectProps) {
       <PopoverTrigger asChild>
         <div className='h-[1.875rem] flex items-center'>
           <button
-            className="flex items-center bg-darkgray px-[0.625rem] gap-2 rounded text-[0.8125rem] text-white ring-[1px] ring-thingray hover:ring-[2px] focus:ring-4 focus:ring-principal"
+            className="flex items-center bg-darkgray dark:bg-lightMode_gray dark:text-lightMode_black px-[0.625rem] gap-2 rounded text-[0.8125rem] text-white ring-[1px] ring-thingray hover:ring-[2px] focus:ring-4 focus:ring-principal"
           >
             {selectedOption?.text}
             <ChevronDown />
@@ -50,14 +50,14 @@ export default function SortSelect({ emitSelection }: SortSelectProps) {
       </PopoverTrigger>
 
       <PopoverContent>
-        <div className="flex bg-gray flex-col  items-start z-10 p-2 absolute origin-top-right right-0  text-white rounded mt-[2px]">
+        <div className="flex bg-gray dark:bg-lightMode_white dark:text-lightMode_black flex-col  items-start z-10 p-2 absolute origin-top-right right-0  text-white rounded mt-[2px]">
           {options.map((option, index) => {
             return (
               <button
                 key={index}
                 className={`flex items-center gap-1 p-2 w-full rounded transition ${selectedOption.value === option.value
-                  ? 'bg-principal hover:bg-principal'
-                  : 'bg-transparent hover:bg-white/10 '
+                  ? 'bg-principal hover:bg-principal dark:text-lightMode_white'
+                  : 'bg-transparent hover:bg-white/10 dark:hover:bg-lightgray'
                   }`}
                 onClick={() => handleSelection(index)}
               >
