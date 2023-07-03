@@ -1,8 +1,8 @@
-import { Search } from 'lucide-react'
 import SortSelect, { Option } from './SortSelect'
 import { ChangeEvent, useEffect, useState } from 'react'
 import { gamesGenre } from '@/pages/api/browseData'
 import { PopoverRoot, PopoverContent, PopoverTrigger } from '../PopOver'
+import { MagnifyingGlass } from 'phosphor-react'
 
 interface CategorySearchProps {
     emitTagSearched: (tag: string) => void
@@ -14,7 +14,7 @@ export default function CategorySearch({ emitTagSearched }: CategorySearchProps)
 
     const trigger = <div className="relative flex rounded  bg-darkgray text-text dark:text-lightMode_black min-w-[14rem]">
         <span className='absolute left-0 top-0 h-full min-w-[1.875rem] flex items-center justify-center'>
-            <Search className="font-bold text-text dark:text-lightMode_thinBlack" strokeWidth={3} width={18} />
+            <MagnifyingGlass className="font-bold text-text dark:text-lightMode_thinBlack" strokeWidth={3} width={18} />
         </span>
 
         <input

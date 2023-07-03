@@ -11,7 +11,6 @@ import SortSelect, { Option } from '@/Components/Browse/SortSelect'
 import CategoryCard, { Card } from '@/Components/Browse/CategoryCard'
 
 // Icons 
-import { Search } from 'lucide-react'
 import CategoryNav from '@/Components/Browse/CategoryNav'
 import CategorySearch from '@/Components/Browse/CategorySearch'
 

@@ -1,6 +1,7 @@
-import { ChevronDown, Sparkles, Check, ArrowDownNarrowWide } from 'lucide-react'
+// import { ChevronDown, Sparkles, Check, ArrowDownNarrowWide } from 'a'
 import { useEffect, useRef, useState } from 'react'
 import { PopoverContent, PopoverRoot, PopoverTrigger } from '../PopOver'
+import { ArrowArcRight, CaretDown, Check, SortDescending, Sparkle } from 'phosphor-react'
 
 export interface Option {
   value: string
@@ -16,12 +17,12 @@ export default function SortSelect({ emitSelection }: SortSelectProps) {
     {
       value: 'recomended',
       text: 'Recomended For You',
-      icon: <Sparkles />,
+      icon: <Sparkle />,
     },
     {
       value: 'viewers',
       text: 'Viewers (High to Low)',
-      icon: <ArrowDownNarrowWide />,
+      icon: <SortDescending />,
     },
   ]
   const [selectedOption, setSelectedOption] = useState<Option>(options[0])
@@ -44,7 +45,7 @@ export default function SortSelect({ emitSelection }: SortSelectProps) {
             className="flex items-center bg-darkgray dark:bg-lightMode_gray dark:text-lightMode_black px-[0.625rem] gap-2 rounded text-[0.8125rem] text-white ring-[1px] ring-thingray hover:ring-[2px] focus:ring-4 focus:ring-principal"
           >
             {selectedOption?.text}
-            <ChevronDown />
+            <CaretDown />
           </button>
         </div>
       </PopoverTrigger>

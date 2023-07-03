@@ -35,7 +35,7 @@ export default function CategoryCard({
         <span>{truncateNumber(viewers)} viewers</span>
         <div className='flex gap-2 flex-wrap'>
           {tags.map(tag => {
-            return <span className='px-3 bg-gray dark:bg-lightMode_darkGray  rounded-full'>{tag}</span>
+            return <span className='px-3 bg-gray dark:bg-lightMode_darkGray rounded-full'>{tag}</span>
           })}
         </div>
       </div>

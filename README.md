@@ -1,38 +1,151 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+<h1>Twitch Clone</h1>
 
-## Getting Started
+<ul>
+    <li>
+        <a href="#technologies">Tecnologias</a>
+    </li>
+    <li>
+        <a href="#how_to_run">Como executar</a>
+    </li>
+     <li>
+        <a href="#screenshots">Telas</a>
+    </li>
+    <li>
+        <a href="#project_structure">Organização do Projeto</a>
+    </li>
+    
+</ul>
 
-First, run the development server:
+<div>
+<h2 id="technologies">Tecnologias</h2>
+<ul>
+    <li> <a href="https://nextjs.org">NextJS</a> - Framework da aplicação </li> 
+    <li> <a 
+            href="https://typescriptlang.org/docs/">
+            Typescript
+            </a> - Adiciona uma tipagem ao vanilla js</li>
+    <li> <a 
+        href="https://tailwindcss.com">
+        TailwindCSS
+        </a> - Estilização </li>
+    <li> <a 
+        href="https://phosphoricons.com">
+        Phosphor
+        </a> - Biblioteca de icones</li>
+    <li> <a 
+        href="https://phosphoricons.com">LocalStorage</a> - Persistência de dados</li>
+</ul>
+</div>
+
+<div>
+    <h2 id="how_to_run">Como executar?</h2>
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Ter NodeJS (versão +18) installado
+```
+```bash
+npm install # Baixa todas as depedências do projeto
+```
+```bash
+npm run dev # Roda a aplicação
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+</div>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Telas
+<div style="display: flex; flex-direction: column; gap: 10px;">
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<div>
+    <h3>HOME</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%;">
+        <div style="display: flex; flex-direction: column;">
+            <h4>Dark</h4>
+            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <h4>Light</h4>
+            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+        </div >
+    </div>
+</div>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<div>
+    <h3>BROWSE</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%;">
+        <div style="display: flex; flex-direction: column;">
+            <h4>Dark</h4>
+            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <h4>Light</h4>
+            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+        </div >
+    </div>
+</div>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<div>
+    <h3>WATCH</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%;">
+        <div style="display: flex; flex-direction: column;">
+            <h4>Dark</h4>
+            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <h4>Light</h4>
+            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+        </div >
+    </div>
+</div>
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<div>
+<h2 id="project_structure">Organização do Projeto</h2>
+<h3> Páginas </h3>
+<ul>
+    <li>
+        <h3>Layout</h3>
+        <p>-> Sidebar </p>
+        <p>-> Header </p>
+    </li>
+    <li>
+        <h3>Home</h3>
+        <p>-> Carousel </p>
+        <p>-> HomeSection </p>
+        <p>-> Live Thumbnail </p>
+    </li>
+    <li>
+        <h3>Watch</h3>
+        <p>-> Video Player </p>
+        <p>-> Chat </p>
+        <p>-> Live Info </p>
+        <p>-> Channel About </p>
+    </li>
+    <li>
+        <h3>Browse</h3>
+        <p>-> Category Card </p>
+        <p>-> Category Nav </p>
+        <p>-> Category Search</p
+        <p>-> Sort Select</p>
+    </li>
+    <li>
+        <h3>Components Genéricos</h3>
+        <p>-> Popover </p>
+        <p>-> Tooltip </p>
+        <p>-> Button </p>
+    </li>
+</ul>
+<h2>Funções úteis</h2>
+<p>São funções genéricas que são usadas por diferentes partes da aplicaçãoe</p>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```js
+function handleTime() {
+  // converte o tempo em segundos para uma string num formato segundos:minutos:horas
+}
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+function truncateNumber() {
+  // pega um inteiro e se ele passar de 1000 divide por 100 e adiciona um k para simplificar o valor
+}
+```
+</div>

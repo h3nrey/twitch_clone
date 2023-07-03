@@ -1,8 +1,8 @@
 import { Channel, Live } from "@/pages/api/homeData";
 import LiveThumbnail from "./LiveThumbnail";
-import { ChevronDown } from "lucide-react";
 import { useContext, useState } from "react";
 import { SidebarContext } from "@/SidebarContext";
+import { CaretDown } from "phosphor-react";
 
 
 interface SectionProps {
@@ -79,7 +79,7 @@ export default function HomeSection({ sectionTitle, channels }: SectionProps) {
                 onClick={() => setIsSectionOpen(true)}
                 className="z-1 flex gap-2 items-center text-principal rounded hover:bg-gray dark:hover:bg-lightMode_thinGray dark:hover:text-lightMode_black hover:text-lightgray font-medium transition p-[0.625rem] py-[0.3125rem]">
                 Show more
-                <span><ChevronDown /></span></button>
+                <span><CaretDown weight="bold" /></span></button>
             </div>
 
           </div>
