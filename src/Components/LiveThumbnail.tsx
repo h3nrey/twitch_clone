@@ -1,3 +1,4 @@
+import { truncateNumber } from '@/utils'
 import Link from 'next/link'
 
 interface LiveThumbnailProps {
@@ -49,14 +50,14 @@ export default function LiveThumbnail({
           {/* Viewers span  */}
           <div className="absolute z-1 p-4 top-full -translate-y-full left-0">
             <span className="bg-darkgray opacity-80 px-[0.2rem] py-[0.05rem] font-normal text-[0.8rem] rounded-[0.2rem] leading-[100%]">
-              {liveViewers} viewers
+              {truncateNumber(liveViewers)} viewers
             </span>
           </div>
         </div>
       </Link>
       <div className="flex gap-2 dark:text-lightMode_thinBlack text-lightgray ">
         <div>
-          <img className="rounded-full h-10 w-10" src={channelAvatar} alt="" />
+          <img className="rounded-full h-10 w-10 object-cover" src={channelAvatar} alt="" />
         </div>
         <div className="flex flex-col overflow-hidden leading-[100%] gap-1 ">
           <h3 className="whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-[15rem] ">

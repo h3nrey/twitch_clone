@@ -14,11 +14,11 @@ export default function App() {
           channels={Channels}
         />
         <HomeSection
-          sectionTitle="Lives that we think you'll like"
+          sectionTitle="Recommended Brazilian Twitchers"
           channels={Channels}
         />
         <HomeSection
-          sectionTitle="Lives that we think you'll like"
+          sectionTitle="What's hot"
           channels={Channels}
         />
       </main>
