@@ -13,7 +13,7 @@ export default function Header() {
 
     return (
         <header
-            className="fixed top-0 flex z-10 bg-darkgray dark:bg-lightMode_white gap-2 text-text px-4 w-full justify-between items-center shadow-black dark:shadow-lightMode_thinBlack/20 shadow-sm"
+            className="fixed top-0 flex z-50 bg-darkgray dark:bg-lightMode_white gap-2 text-text px-4 w-full justify-between items-center shadow-black dark:shadow-lightMode_thinBlack/20 shadow-sm"
         >
             <nav className="flex items-center gap-6 dark:text-lightMode_black">
                 <Link href="/" onClick={() => setPageOpenned("")}>

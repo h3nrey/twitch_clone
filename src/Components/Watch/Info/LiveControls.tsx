@@ -2,7 +2,7 @@ import { CaretDown, HandWaving, Heart, Star } from "phosphor-react";
 
 export default function LiveControls() {
     return (
-        <div className="flex gap-2">
+        <div className="flex sm:flex-col sm:items-start sm:w-full gap-2">
             <button
                 className="flex text-principal items-center text-[0.8125rem] gap-2 hover:bg-lightMode_darkGray dark:hover:text-lightMode_black hover:bg-white/40 transition hover:text-text px-2 py-1 rounded font-semibold"
                 onClick={() => alert("reacted")}

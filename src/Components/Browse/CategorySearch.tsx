@@ -68,7 +68,7 @@ export default function CategorySearch({ emitTagSearched }: CategorySearchProps)
         setTagsFiltered(result);
     }
     return (
-        <div className="mt-[1.25rem] relative flex items-center justify-between">
+        <div className="mt-[1.25rem] relative flex md:flex-col md:items-start md:gap-2 items-center justify-between">
 
             <PopoverRoot>
                 <PopoverTrigger asChild>

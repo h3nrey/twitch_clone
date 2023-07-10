@@ -1,6 +1,7 @@
 import { SidebarContext } from "@/SidebarContext";
 import { Channel } from "@/pages/api/homeData";
 import { truncateNumber } from "@/utils";
+import Link from "next/link";
 import { ArrowLeft, ArrowRight, CaretLeft, CaretRight } from "phosphor-react";
 import { useContext, useState } from "react";
 
@@ -90,7 +91,8 @@ export default function Carousel({ lives }: CarouselProps) {
                         {lives.map((live, index) => {
                             const { zIndex, transform, showText, bright } = setCardsStyle(indices[index]);
                             return (
-                                <div
+                                <Link
+                                    href={`/watch/${live.name}`}
                                     key={index}
                                     className={`absolute w-full rounded overflow-hidden shadow-md shadow-black/20 drop-shadow-md transition-all duration-300 ease-in`}
                                     style={{
@@ -126,7 +128,7 @@ export default function Carousel({ lives }: CarouselProps) {
                                         )}
 
                                     </div>
-                                </div>
+                                </Link>
                             )
                         })}
                     </div>

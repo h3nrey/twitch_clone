@@ -17,7 +17,7 @@ export default function LiveInfo(
     { liveProgress, channelName, channelColor, avatarUrl, liveTitle, liveCategory, liveTags, liveViewers }: LiveInfoProps) {
     return (
         <div>
-            <div className="flex justify-between items-start">
+            <div className="flex sm:flex-col sm:items-start justify-between items-start">
                 {/* Live Info */}
                 <LiveDetails
                     channelName={channelName}

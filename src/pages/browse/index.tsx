@@ -51,7 +51,7 @@ export default function App() {
       <CategorySearch emitTagSearched={FilterGames} />
 
       {/* Games grid  */}
-      <div className={`grid mt-[1.25rem] gap-x-[0.625rem] gap-6 ${sidebarHidden ? 'grid-cols-7' : 'grid-cols-5'}`}>
+      <div className={`grid sm:flex sm:flex-col mt-[1.25rem] gap-x-[0.625rem] gap-6 ${sidebarHidden ? 'grid-cols-7 md:grid-cols-4' : 'grid-cols-5 md:grid-cols-2'}`}>
         {filteredGames.map((game, index) => {
           return (
             <CategoryCard

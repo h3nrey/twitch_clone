@@ -9,9 +9,8 @@ export default function About({ name, followers, about, socialLinks, color }: Ch
     const chatHidden = false
     return (
         <div
-            className="text-text flex justify-between p-10 gap-10 bg-darkgray dark:bg-lightMode_white dark:text-lightMode_black rounded transition"
+            className={`text-text flex justify-between p-10 gap-10 bg-darkgray dark:bg-lightMode_white dark:text-lightMode_black rounded transition ${sidebarHidden ? 'mx-[1.5rem] my-[2.5rem] sm:mx-0 sm:my-0' : "my-[1.5rem] mx-0"}`}
             style={{
-                margin: sidebarHidden ? "1.5rem 2.5rem" : "1.5rem 0",
                 flexDirection: !chatHidden && !sidebarHidden ? "column" : "row"
             }}>
             <div>

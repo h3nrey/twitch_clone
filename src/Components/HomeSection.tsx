@@ -21,7 +21,7 @@ export default function HomeSection({ sectionTitle, channels }: SectionProps) {
       <div className='flex flex-col gap-y-4'>
 
         {/* First row */}
-        <div className={`grid ${sidebarHidden ? 'grid-cols-4' : 'grid-cols-3'}`}>
+        <div className={`grid md:flex md:flex-col ${sidebarHidden ? 'grid-cols-4 md:grid-cols-2' : 'grid-cols-3 md:grid-cols-1'}`}>
           {channels.map(({ name, color, avatarUrl, live }, index) => index < 4 && (
             <>
               {
