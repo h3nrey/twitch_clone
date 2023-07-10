@@ -24,7 +24,7 @@
     <li> <a 
             href="https://typescriptlang.org/docs/">
             Typescript
-            </a> - Adiciona uma tipagem ao vanilla js</li>
+            </a> - Adiciona uma tipagem ao js puro</li>
     <li> <a 
         href="https://tailwindcss.com">
         TailwindCSS

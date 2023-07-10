@@ -16,7 +16,7 @@ export default function ThemeSwitcher() {
         }
     }
     return (
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-10">
             <span className="flex gap-1">
                 <Moon weight="bold" size={20} />
                 Dark Theme

@@ -6,18 +6,31 @@ import Button from "./Button"
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "./PopOver"
 import ThemeSwitcher from "./Header/ThemeSwitcher"
 import { ThemeContext } from "@/ThemeContext"
-import { useContext } from "react"
+import { CSSProperties, useContext, useState } from "react"
+import PageLink from "./Header/PageLink"
 export default function Header() {
+    const [pageOpenned, setPageOpenned] = useState("");
+
     return (
         <header
-            className="fixed top-0 flex z-10 bg-darkgray dark:bg-lightMode_white gap-2 py-2 text-text px-4 w-full justify-between items-center shadow-black dark:shadow-lightMode_thinBlack/20 shadow-sm"
+            className="fixed top-0 flex z-10 bg-darkgray dark:bg-lightMode_white gap-2 text-text px-4 w-full justify-between items-center shadow-black dark:shadow-lightMode_thinBlack/20 shadow-sm"
         >
             <nav className="flex items-center gap-2 dark:text-lightMode_black">
-                <Link href="/">
+                <Link href="/" onClick={() => setPageOpenned("")}>
                     <img src="https://www.freepnglogos.com/uploads/twitch-app-logo-png-3.png" className="h-6" alt="" />
                 </Link>
-                <Link href="/browse" className="transition font-semibold hover:pointer hover:text-principal text-sm">Following</Link>
-                <Link href="/browse" className="transition font-semibold hover:pointer hover:text-principal text-sm">Browse</Link>
+                <PageLink
+                    currentPage={pageOpenned}
+                    setCurrentPage={() => setPageOpenned("following")}
+                    linkName="Following"
+                    url="following"
+                />
+                <PageLink
+                    currentPage={pageOpenned}
+                    setCurrentPage={() => setPageOpenned("browse")}
+                    linkName="Browse"
+                    url="browse"
+                />
                 <TooltipBox description="More" boxPos={BoxPositions.bottomCenter}>
                     <button
                         className="bg-transparent hover:bg-white/30 dark:hover:bg-lightMode_thinGray rounded transition w-[1.875rem] h-[1.875rem] flex justify-center items-center">
@@ -67,7 +80,7 @@ export default function Header() {
                 <PopoverRoot>
                     <PopoverTrigger asChild>
                         <button>
-                            <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/7b68f6a2-1316-47c9-98e6-4413dad16837-profile_image-70x70.jpg"
+                            <img src="https://avatars.githubusercontent.com/u/56360819?v=4"
                                 className="rounded-full h-[1.875rem]"
                                 alt=""
                             />
@@ -77,19 +90,19 @@ export default function Header() {
                         <div
                             className="absolute inline right-0 bg-darkgray dark:bg-lightMode_white rounded -translate-x-2 drop-shadow-lg shadow-black  p-[0.625rem] z-50"
                             style={{ boxShadow: "0 0 10px 1px rgba(0,0,0,0.5)" }}>
-                            <div className="flex gap-1 items-center pb-4 border-b-[1px] border-gray">
+                            <a href="https://github.com/h3nrey" target="_blank" className="flex gap-1 items-center pb-4 border-b-[1px] border-gray">
                                 <figure>
-                                    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/7b68f6a2-1316-47c9-98e6-4413dad16837-profile_image-70x70.jpg"
+                                    <img src="https://avatars.githubusercontent.com/u/56360819?v=4"
                                         className="rounded-full h-10"
                                         alt=""
                                     />
                                 </figure>
-                                <h2>Vitongemaplys</h2>
-                            </div>
+                                <h2>h3nrey</h2>
+                            </a>
 
                             <div className="mt-1">
                                 <ThemeSwitcher />
-                                <p>Lorem ipsum, dolor sit amet</p>
+                                {/* <p>Lorem ipsum, dolor sit amet</p> */}
                             </div>
                         </div>
                     </PopoverContent>

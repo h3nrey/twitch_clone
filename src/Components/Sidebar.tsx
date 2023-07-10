@@ -1,6 +1,7 @@
 import { ArrowLineLeft, ArrowLineRight, ArrowsDownUp } from "phosphor-react";
 import { useEffect, useState } from "react";
 import SidebarChannel from "./SidebarChannel";
+import { Channel, Channels } from "@/pages/api/homeData";
 
 interface SideBarProps {
     onStateChange: (state: boolean) => void;
@@ -8,10 +9,16 @@ interface SideBarProps {
 
 export default function SideBar({ onStateChange }: SideBarProps) {
     const [hidden, setHidden] = useState(true);
+    const [myChannels, setMyChannels] = useState<Channel[]>(Channels)
+
 
     useEffect(() => {
         onStateChange(hidden)
     }, [hidden])
+
+    useEffect(() => {
+        setMyChannels(Channels)
+    })
 
     return (
         <div
@@ -45,13 +52,17 @@ export default function SideBar({ onStateChange }: SideBarProps) {
                 </div>
             }
 
+            {myChannels.map(channel => (
+                <SidebarChannel
+                    hidden={hidden}
+                    channelOnlive={channel.onLive}
+                    channelAvatar={channel.avatarUrl}
+                    channelName={channel.name}
+                    channelURL={`/${channel.name}`}
+                    liveViewers={channel.live.viewers}
+                />
+            ))}
 
-            <SidebarChannel
-                hidden={hidden}
-                channelAvatar="https://static-cdn.jtvnw.net/jtv_user_pictures/7b68f6a2-1316-47c9-98e6-4413dad16837-profile_image-70x70.jpg"
-                channelName="OCarteiroCosmico"
-                channelURL="/vitongemaplys"
-            />
         </div>
     )
 }

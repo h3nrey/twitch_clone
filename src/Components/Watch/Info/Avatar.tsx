@@ -4,9 +4,9 @@ interface AvatarProps {
 }
 export default function Avatar({ channelColor, avatarURL }: AvatarProps) {
     return (
-        <div className="flex flex-col h-16 w-16">
+        <div className="flex flex-col">
             <img
-                className="rounded-full border-4 h-full w-full"
+                className="rounded-full border-4 h-16 w-16 object-cover"
                 src={avatarURL}
                 style={{ borderColor: channelColor }}
             />

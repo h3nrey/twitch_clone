@@ -1,57 +1,14 @@
 import { SidebarContext } from "@/SidebarContext";
+import { Channel } from "@/pages/api/homeData";
 import { truncateNumber } from "@/utils";
 import { ArrowLeft, ArrowRight, CaretLeft, CaretRight } from "phosphor-react";
 import { useContext, useState } from "react";
 
-const lives = [
-    {
-        channelName: "vitongemaplys",
-        channelAvatar: "https://static-cdn.jtvnw.net/jtv_user_pictures/7b68f6a2-1316-47c9-98e6-4413dad16837-profile_image-70x70.jpg",
-        liveSubject: "Just Chatting",
-        liveViewers: 1000,
-        liveTags: ["chatting", "dark"],
-        liveDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur architecto veniam obcaecati illum voluptatibus, amet animi eum eaque, facilis eveniet similique magnam nam at ea ad. Vel, magni. Voluptatibus, quibusdam!",
-        livePreview: "https://t.ctcdn.com.br/j8werVFrE-lnpEhJS9Zs05bXjaM=/1001x563/smart/i567711.jpeg",
-    },
-    {
-        channelName: "OCarteiroCosmico",
-        channelAvatar: "https://static-cdn.jtvnw.net/jtv_user_pictures/264ad721-4c28-4465-8a65-0a1bbb2ecdba-profile_image-70x70.png",
-        liveSubject: "Street Fight",
-        liveViewers: 24,
-        liveTags: ["lutinha"],
-        liveDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur architecto veniam obcaecati illum voluptatibus, amet animi eum eaque, facilis eveniet similique magnam nam at ea ad. Vel, magni. Voluptatibus, quibusdam!",
-        livePreview: "https://pop.proddigital.com.br/wp-content/uploads/sites/8/2021/11/batman.jpg",
-    },
-    {
-        channelName: "kksaiko",
-        channelAvatar: "https://static-cdn.jtvnw.net/jtv_user_pictures/3d1f7393-00cf-4bef-91dd-3361a4014bd6-profile_image-70x70.png",
-        liveSubject: "Postal 2",
-        liveViewers: 24,
-        liveTags: ["lutinha"],
-        liveDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur architecto veniam obcaecati illum voluptatibus, amet animi eum eaque, facilis eveniet similique magnam nam at ea ad. Vel, magni. Voluptatibus, quibusdam!",
-        livePreview: "https://gameplayscassi.com.br/wp-content/uploads/2022/04/Postal-2.jpg",
-    },
-    {
-        channelName: "Jogando Foddaci",
-        channelAvatar: "https://static-cdn.jtvnw.net/jtv_user_pictures/3d1f7393-00cf-4bef-91dd-3361a4014bd6-profile_image-70x70.png",
-        liveSubject: "Postal 2",
-        liveViewers: 24,
-        liveTags: ["lutinha"],
-        liveDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur architecto veniam obcaecati illum voluptatibus, amet animi eum eaque, facilis eveniet similique magnam nam at ea ad. Vel, magni. Voluptatibus, quibusdam!",
-        livePreview: "https://gameplayscassi.com.br/wp-content/uploads/2022/04/Postal-2.jpg",
-    },
-    {
-        channelName: "Yun Li",
-        channelAvatar: "https://static-cdn.jtvnw.net/jtv_user_pictures/3d1f7393-00cf-4bef-91dd-3361a4014bd6-profile_image-70x70.png",
-        liveSubject: "Postal 2",
-        liveViewers: 24,
-        liveTags: ["lutinha"],
-        liveDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur architecto veniam obcaecati illum voluptatibus, amet animi eum eaque, facilis eveniet similique magnam nam at ea ad. Vel, magni. Voluptatibus, quibusdam!",
-        livePreview: "https://gameplayscassi.com.br/wp-content/uploads/2022/04/Postal-2.jpg",
-    },
-];
+interface CarouselProps {
+    lives: Channel[]
+}
 
-export default function Carousel() {
+export default function Carousel({ lives }: CarouselProps) {
     const [indices, setIndices] = useState([3, 4, 0, 1, 2])
     const sidebarHidden = useContext(SidebarContext);
 
@@ -143,24 +100,28 @@ export default function Carousel() {
                                         left: `50%`
                                     }}>
                                     <div className="flex">
-                                        <img src={live.livePreview} className="w-full h-[300px] object-cover" alt="" />
+                                        <img
+                                            src={live.live.thumbUrl}
+                                            className="w-full h-[300px] object-cover"
+                                            style={{ width: showText ? "520px" : "100%" }}
+                                        />
 
                                         {showText && (
-                                            <div className="bg-darkgray dark:bg-white w-[13.75rem] h-[300px] overflow-hidden pl-2 lg:hidden">
+                                            <div className="bg-darkgray dark:bg-white w-full h-[300px] overflow-hidden px-2 pb-2 lg:hidden">
                                                 <header className="flex gap-2 items-start mt-2">
-                                                    <img src={live.channelAvatar} alt="" className="rounded-full h-10" />
+                                                    <img src={live.avatarUrl} alt="" className="rounded-full h-10 w-10 object-cover" />
                                                     <div className="flex flex-col">
-                                                        <h3 className="text-principal">{live.channelName}</h3>
-                                                        <p className="text-principal text-[0.8125rem]">{live.liveSubject}</p>
-                                                        <span className="text-[0.8125rem] dark:text-lightMode_black">{truncateNumber(live.liveViewers)} viewers</span>
+                                                        <h3 className="text-principal text-[0.8125rem]">{live.name}</h3>
+                                                        <p className="text-principal text-[0.8125rem]">{live.live.category}</p>
+                                                        <span className="text-[0.8125rem] dark:text-lightMode_black">{truncateNumber(live.live.viewers)} viewers</span>
                                                     </div>
                                                 </header>
                                                 <div className="flex gap-2 mt-2">
-                                                    {live.liveTags.map(tag =>
+                                                    {live.live.tags.map(tag =>
                                                         <span className="py-[1px] px-2 text-[0.8125rem] bg-gray dark:bg-lightMode_darkGray dark:text-lightMode_black rounded-2xl">{tag}</span>
                                                     )}
                                                 </div>
-                                                <p className="text-[0.8125rem] mt-2 dark:text-lightMode_black">{live.liveDescription}</p>
+                                                <p className="text-[0.8125rem] mt-2 dark:text-lightMode_black whitespace-pre-wrap">{live.about}</p>
                                             </div>
                                         )}
 

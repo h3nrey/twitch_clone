@@ -44,7 +44,7 @@ export default function App() {
         >
           Categories
         </Link>
-        <Link href="/browse/" className="border-b-4 border-principal p-2">Live Channels</Link>
+        <Link href="/browse/" className=" p-2">Live Channels</Link>
       </nav>
 
       {/* Categories Search  */}

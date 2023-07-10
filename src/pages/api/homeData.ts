@@ -5,6 +5,7 @@ export interface  Channel {
     followers: number,
     about: string,
     socialLinks: SocialLink[],
+    onLive: boolean,
     live: Live
 }
 
@@ -31,7 +32,7 @@ export const Channels: Channel[] = [
         avatarUrl: "https://i0.wp.com/scriiipt.com/wp-content/uploads/2022/04/Marco-Pagot-Porco-Rosso.png?resize=640%2C369&ssl=1",
         color: '#6FBACA',
         followers: 300,
-        about: "Mais um guerreiro da Maior Tribo do Mundo! Atuei como jogador profissional de CS por quase uma década, fui o primeiro treinador a ser campeão do mundo em 2007 com o MIBR. Acertei um pouco, errei muito, ganhei bastante coisa e tbm perdi demais! Atualmente faço live todos os dias aqui na Twitch!",
+        about: "ファシストになるより豚ぶたのほうがマシさ",
         socialLinks: [
             {
                 title: "Youtubil",
@@ -39,6 +40,7 @@ export const Channels: Channel[] = [
                 type: "youtube",
             }
         ],
+        onLive: true,
         live: {
             title: "Assistindo Princesa Mononoke",
             category: "Just Chatting",
@@ -67,6 +69,7 @@ export const Channels: Channel[] = [
                 type: "youtube",
             }
         ],
+        onLive: false,
         live: {
             title: "LOUD X ColdZ [final]",
             category: "CS:GO",
@@ -82,7 +85,7 @@ export const Channels: Channel[] = [
         avatarUrl: "https://static-cdn.jtvnw.net/jtv_user_pictures/0595cdd0-65a7-4fa3-996d-323cf3a54be1-profile_image-70x70.png",
         color: '#F02727',
         followers: 3000000,
-        about: "Mais um guerreiro da Maior Tribo do Mundo! Atuei como jogador profissional de CS por quase uma década, fui o primeiro treinador a ser campeão do mundo em 2007 com o MIBR. Acertei um pouco, errei muito, ganhei bastante coisa e tbm perdi demais! Atualmente faço live todos os dias aqui na Twitch!",
+        about: "Se torne Mia, uma detetive paranormal buscando por seu pai que desapareceu. Investigue e desvende os mistérios do Enigma do Medo, derrotando monstros assustadores em seu caminho.",
         socialLinks: [
             {
                 title: "TokiTik",
@@ -95,6 +98,7 @@ export const Channels: Channel[] = [
                 type: "youtube",
             }
         ],
+        onLive: false,
         live: {
             title: "RPG NERD",
             category: "Just Talking",
@@ -123,6 +127,7 @@ export const Channels: Channel[] = [
                 type: "youtube",
             }
         ],
+        onLive: true,
         live: {
             title: "Speedrunzinha superman 64 any%",
             category: "Superman 64",
@@ -158,6 +163,7 @@ export const Channels: Channel[] = [
                 type: "instagram",
             },
         ],
+        onLive: true,
         live: {
             title: "Desenhando da cabeça o XLR8 e a Vampira",
             category: "Just Talking",
@@ -186,6 +192,7 @@ export const Channels: Channel[] = [
                 type: "youtube",
             }
         ],
+        onLive: true,
         live: {
             title: "Analisando o arco convicção de Berserk",
             category: "Just Talking",
@@ -219,6 +226,7 @@ export const Channels: Channel[] = [
                 type: "instagram",
             }
         ],
+        onLive: false,
         live: {
             title: "b",
             category: "Only Up!",
@@ -247,6 +255,7 @@ export const Channels: Channel[] = [
                 type: "instagram",
             }
         ],
+        onLive: true,
         live: {
             title: "LEAGUE ATE AS 15h",
             category: "League Of Legends",
