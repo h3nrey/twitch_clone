@@ -1,7 +1,7 @@
 import Link from "next/link"
 import SearchBar from "./SearchBar"
 import TooltipBox, { BoxPositions } from "./TooltipBox"
-import { Chat, CrownSimple, CurrencyEth, DotsThreeOutlineVertical, Tray } from "phosphor-react"
+import { Chat, CrownSimple, CurrencyEth, DotsThreeOutlineVertical, Tray, TwitchLogo } from "phosphor-react"
 import Button from "./Button"
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "./PopOver"
 import ThemeSwitcher from "./Header/ThemeSwitcher"
@@ -15,9 +15,9 @@ export default function Header() {
         <header
             className="fixed top-0 flex z-10 bg-darkgray dark:bg-lightMode_white gap-2 text-text px-4 w-full justify-between items-center shadow-black dark:shadow-lightMode_thinBlack/20 shadow-sm"
         >
-            <nav className="flex items-center gap-2 dark:text-lightMode_black">
+            <nav className="flex items-center gap-6 dark:text-lightMode_black">
                 <Link href="/" onClick={() => setPageOpenned("")}>
-                    <img src="https://www.freepnglogos.com/uploads/twitch-app-logo-png-3.png" className="h-6" alt="" />
+                    <TwitchLogo weight="bold" size={28} className="text-principal" />
                 </Link>
                 <PageLink
                     currentPage={pageOpenned}

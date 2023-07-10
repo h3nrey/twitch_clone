@@ -1,4 +1,4 @@
-<img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+<img src="./screenshots/base.png">
 <h1>Twitch Clone</h1>
 
 <ul>
@@ -54,18 +54,17 @@ npm run dev # Roda a aplicação
 </div>
 
 ## Telas
-<div style="display: flex; flex-direction: column; gap: 10px;">
-
+<div id="screenshots" style="display: flex; flex-direction: column; gap: 10px;">
 <div>
     <h3>HOME</h3>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%;">
         <div style="display: flex; flex-direction: column;">
             <h4>Dark</h4>
-            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+            <img src="./screenshots/home_dark.png">
         </div>
         <div style="display: flex; flex-direction: column;">
             <h4>Light</h4>
-            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+            <img src="./screenshots/home_light.png">
         </div >
     </div>
 </div>
@@ -75,11 +74,11 @@ npm run dev # Roda a aplicação
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%;">
         <div style="display: flex; flex-direction: column;">
             <h4>Dark</h4>
-            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+            <img src="./screenshots/browse_dark.png">
         </div>
         <div style="display: flex; flex-direction: column;">
             <h4>Light</h4>
-            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+            <img src="./screenshots/browse_light.png">
         </div >
     </div>
 </div>
@@ -89,11 +88,11 @@ npm run dev # Roda a aplicação
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%;">
         <div style="display: flex; flex-direction: column;">
             <h4>Dark</h4>
-            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+            <img src="./screenshots/watch_dark.png">
         </div>
         <div style="display: flex; flex-direction: column;">
             <h4>Light</h4>
-            <img src="https://cdn.pixabay.com/photo/2023/06/21/14/17/mountain-8079469_1280.jpg">
+            <img src="./screenshots/watch_light.png">
         </div >
     </div>
 </div>

@@ -25,7 +25,7 @@ export default function PageLink({ currentPage, setCurrentPage, linkName, url }:
         let color = ""
 
         if (isHoveringLink) {
-            color = "rgb(142, 42, 226)s"
+            color = "rgb(142, 42, 226)"
         } else {
             if (theme.theme == "dark") {
                 color = "rgb(31,31,35)"
@@ -57,7 +57,7 @@ export default function PageLink({ currentPage, setCurrentPage, linkName, url }:
     return (
         <Link
             href={`/${url}`}
-            className="transition font-semibold hover:pointer hover:text-principal text-text text-sm border-b-4 h-full py-[0.9rem] border-principal"
+            className="transition font-semibold hover:pointer hover:text-principal text-text text-sm border-b-4 h-full py-[0.85rem] border-principal text-base"
             onMouseEnter={OnMouseEnter}
             onMouseLeave={OnMouseExit}
             onClick={() => setCurrentPage(url)}

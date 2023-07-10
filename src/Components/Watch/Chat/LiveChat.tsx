@@ -42,8 +42,8 @@ export default function LiveChat() {
                             </header>
                             <div className="p-[0.625rem]">
                                 <ChatComment userName="h3nrey" comment="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates laborum recusandae veritatis dolor sunt earum magnam vero? Quas beatae, dignissimos iusto voluptatibus suscipit temporibus nesciunt ab, nemo doloremque, non consectetur!" />
-                                <ChatComment userName="h3nrey" comment="oi vito tudo bom, hahaha" />
-                                <ChatComment userName="h3nrey" comment="oi vito tudo bom, hahaha" />
+                                <ChatComment userName="h3nrey" comment="子にちわ、Pedro　でうす" />
+                                <ChatComment userName="h3nrey" comment="かこいい　live　ぶた" />
                             </div>
 
                         </div>
