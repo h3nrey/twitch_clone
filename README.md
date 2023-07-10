@@ -1,5 +1,7 @@
 <img src="./screenshots/base.png">
-<h1>Twitch Clone</h1>
+<a href="https://twitch-clone-nu.vercel.app">
+ <h1>Twitch Clone</h1>
+</a>
 
 <ul>
     <li>
@@ -136,7 +138,7 @@ npm run dev # Roda a aplicação
     </li>
 </ul>
 <h2>Funções úteis</h2>
-<p>São funções genéricas que são usadas por diferentes partes da aplicaçãoe</p>
+<p>Funções genéricas que são usadas por diferentes partes da aplicação</p>
 
 ```js
 function handleTime() {
